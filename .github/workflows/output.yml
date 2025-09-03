@@ -1,11 +1,10 @@
 name: Output Information (Metadata)
 
-on: 
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   info:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetching GitHub context
-        run: echo "${{ toJSON(github) }}"
+     - name: Fetching github context
+       run: echo '${{ toJSON(github) }}'
