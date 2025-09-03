@@ -3,14 +3,17 @@ on : push
 jobs : 
     test:
     runs-on: ubuntu-latest
-    git steps:
-       -name : Get code
-       -uses : actions/checkout@v5
-       -name : Install Node
-       -uses : actions/setup-node@v4
-       -with: 
+    steps:
+       - name : Get code
+         uses : actions/checkout@v5
+        
+       - name : Install Node
+         uses : actions/setup-node@v4
+         with: 
           node-version : 18
-       -name : Install dependecies
-       -run : npm ci
-       -name : Run Tests
-       -run : npm test
+
+       - name : Install dependecies
+         run : npm ci
+         
+       - name : Run Tests
+         run : npm test
